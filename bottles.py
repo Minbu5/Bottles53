@@ -1,21 +1,13 @@
-
+bottle_5 = {"max quantity": 5,
+            "content": 0,
+            "empty space": 5
+            }
 
 bottle_3 = {"max quantity": 3,
-         "content": 0,
-         "empty space": 3
-         }
-bottle_5 = {"max quantity": 5,
-         "content": 0,
-         "empty space": 5
-         }
+            "content": 0,
+            "empty space": 3
+            }
 
-def check_solve(bottle):
-    if bottle["content"] == 4:
-        print("*******************")
-        print("**     !!!!!     **")
-        print("** !!! WOHOO !!! **")
-        print("**     !!!!!     **")
-        print("*******************")
 
 def fill(bottle):
     bottle["content"] = bottle["max quantity"]
@@ -26,9 +18,11 @@ def spill(bottle):
     bottle["content"] = 0
     bottle["empty space"] = bottle["max quantity"]
 
+
 def transfer(bottle_from, botttle_to):
     if bottle_from["content"] >= botttle_to["empty space"]:
-        transfer_quantity = bottle_from["content"]-(bottle_from["content"] - botttle_to["empty space"])# (5 - (5 - 3)  = 3
+        transfer_quantity = bottle_from["content"] - (
+                    bottle_from["content"] - botttle_to["empty space"])  # (5 - (5 - 3)  = 3
 
     else:
         transfer_quantity = bottle_from["content"]
@@ -38,6 +32,17 @@ def transfer(bottle_from, botttle_to):
     bottle_from["empty space"] += transfer_quantity
     botttle_to["empty space"] -= transfer_quantity
 
+
+def test():
+    print("*******************************")
+    print(f"Content b5: {bottle_5["content"]}")
+    print(f"Free space b5: {bottle_5["empty space"]}")
+    print("*******************************")
+    print("*******************************")
+    print(f"Content b3: {bottle_3["content"]}")
+    print(f"Free space b3: {bottle_3["empty space"]}")
+    print("*******************************")
+    print("*******************************")
 
 
 # solution 1
@@ -64,19 +69,4 @@ def transfer(bottle_from, botttle_to):
 
 
 
-# transfer(bottle_3, bottle_5)
-#
-# spill(bottle_5)
 
-# test
-print("*******************************")
-print(f"Content b5: {bottle_5["content"]}")
-print(f"Free space b5: {bottle_5["empty space"]}")
-print("*******************************")
-print("*******************************")
-print(f"Content b3: {bottle_3["content"]}")
-print(f"Free space b3: {bottle_3["empty space"]}")
-print("*******************************")
-print("*******************************")
-
-check_solve(bottle_5)

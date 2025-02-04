@@ -1,6 +1,6 @@
 import sys
-from PyQt5.QtWidgets import (QApplication, QMainWindow, QLabel,
-                             QPushButton, QWidget)
+from PyQt5.QtWidgets import (QApplication, QMainWindow,
+                             QLabel, QPushButton)
 from PyQt5.QtGui import QFont, QPixmap  # for Icons, fonts, images
 from PyQt5.QtCore import Qt  # alignment
 
@@ -117,7 +117,6 @@ class MainWindow(QMainWindow):
         self.capacity5 = bottle_5["content"]
         self.pixmap = QPixmap(f"assets/5/5_{self.capacity5}.png")
         self.vessel5.setPixmap(self.pixmap)
-        print(self.capacity5)
         self.check_4l()
 
 

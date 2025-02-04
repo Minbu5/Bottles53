@@ -22,7 +22,7 @@ def spill(bottle):
 def transfer(bottle_from, botttle_to):
     if bottle_from["content"] >= botttle_to["empty space"]:
         transfer_quantity = bottle_from["content"] - (
-                    bottle_from["content"] - botttle_to["empty space"])  # (5 - (5 - 3)  = 3
+                bottle_from["content"] - botttle_to["empty space"])  # (5 - (5 - 3)  = 3
 
     else:
         transfer_quantity = bottle_from["content"]
@@ -44,7 +44,6 @@ def test():
     print("*******************************")
     print("*******************************")
 
-
 # solution 1
 ###########################
 # fill(bottle_5)
@@ -65,8 +64,3 @@ def test():
 # transfer(bottle_3, bottle_5)
 # fill(bottle_3)
 # transfer(bottle_3, bottle_5)
-
-
-
-
-

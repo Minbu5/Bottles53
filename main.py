@@ -16,7 +16,7 @@ while game == "on":
     print(f"In 5 l. bottle is {bottle_5["content"]} l.\nIn in 3 l. bottle is {bottle_3["content"]} l.")
     print("******************************************************************")
 
-    sel_bot = input(f"Select bottle: \n5 -  for 5 l.;  \n3 - for 3 l.;")
+    sel_bot = input(f"Select bottle: \n5 - for 5 l.;  \n3 - for 3 l.;\n")
     print("******************************************************************")
 
     action = input(
@@ -39,6 +39,7 @@ while game == "on":
             spill(bottle_3)
         if action == "3":
             transfer(bottle_3, bottle_5)
+
     if action == "4":
         game = "stop"
         print("Game stopped. Bye.")

@@ -1,5 +1,6 @@
 ('C:\\Users\\butau\\PyProjektai\\Bottles53\\build\\main\\PYZ-00.pyz',
- [('_compat_pickle',
+ [('Game', 'C:\\Users\\butau\\PyProjektai\\Bottles53\\Game.py', 'PYMODULE'),
+  ('_compat_pickle',
    'C:\\Users\\butau\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\_compat_pickle.py',
    'PYMODULE'),
   ('_compression',

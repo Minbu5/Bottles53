@@ -18,14 +18,17 @@ class MainWindow(QMainWindow):
 
     # User interface settings
     def initUI(self):
+        self.intro_message = QLabel("This is puzzle program.\n"
+                                    "You have two bottles with capacities 5 liters and 3 liters.\n"
+                                    "Both vessels don't have markings except for full capacities (5 l. and 3 l.) respectively.\n"
+                                    "You can fill bottles with water, spill out or transfer from one to another unlimited times.\n"
+                                    "The goal is to get 4 liters in 5 l. bottle", self)
 
-        self.intro_message = QLabel('''
 
-                         This is puzzle program.
-                         - You have two bottles with capacities 5 liters and 3 liters.
-                         - Both vessels don't have markings except for full capacities (5 l. and 3 l.) respectively.
-                         - You can fill bottles with water, spill out or transfer from one to another unlimited times.
-                         - The goal is to get 4 liters in 5 l. bottle ''', self)
+
+
+
+
 
 
         self.intro_message.setStyleSheet(''' QLabel{border: 3px solid;
@@ -38,7 +41,7 @@ class MainWindow(QMainWindow):
                                              }''')
 
         self.intro_message.setGeometry(80, 0, 750, 170)
-        self.intro_message.setAlignment(Qt.AlignLeading)
+        self.intro_message.setAlignment(Qt.AlignCenter)
         self.intro_message.setFont(QFont("Times New Roman", 13))
 
         # Bottles
@@ -159,12 +162,15 @@ class MainWindow(QMainWindow):
 
     def check_4l(self):
         if self.capacity5 == 4:
-            self.intro_message.setText('''
-                                ⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐
-                                             Congatulations                            
-                                             You are master of watter and logic !!!    
-                                ⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐    
-            ''')
+            self.intro_message.setText('⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐\n'
+                                       'Congatulations, You are master of watter and logic !!!\n'
+                                       '⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐  '
+
+
+
+
+
+            )
 
 
 def main():

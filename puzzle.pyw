@@ -42,7 +42,13 @@ class MainWindow(QMainWindow):
 
         self.intro_message.setGeometry(80, 0, 750, 170)
         self.intro_message.setAlignment(Qt.AlignCenter)
-        self.intro_message.setFont(QFont("Times New Roman", 13))
+
+        # set size of font relative to screen
+        screen_height = QApplication.primaryScreen().availableGeometry().height()
+        message_font_size = int(screen_height * 0.015)  # 1,5 % of screen height, adjust as needed depending on device
+        self.intro_message.setFont(QFont("Times New Roman", message_font_size))
+
+        # self.intro_message.setFont(QFont("Times New Roman", 13))
 
         # Bottles
         ########################################################
@@ -54,19 +60,23 @@ class MainWindow(QMainWindow):
         self.pixmap = QPixmap(f"assets/5/5_{self.capacity5}.png")
         self.vessel5.setPixmap(self.pixmap)
         self.vessel5.setScaledContents(True)
+        button_font_size = int(screen_height * 0.013)
 
         # vessel 5 l menu buttons
         self.button_fill_5 = QPushButton("Fill 5L", self)
         self.button_fill_5.setGeometry(170, 470, 230, 50)
         self.button_fill_5.clicked.connect(self.fill_5)  # send signal
+        self.button_fill_5.setFont(QFont("Times New Roman", button_font_size))
 
         self.button_spill_5 = QPushButton("Spill 5L", self)
         self.button_spill_5.setGeometry(170, 530, 230, 50)
         self.button_spill_5.clicked.connect(self.spill_5)
+        self.button_spill_5.setFont(QFont("Times New Roman", button_font_size))
 
         self.button_transfer_5 = QPushButton("Transfer from 5L", self)
         self.button_transfer_5.setGeometry(170, 590, 230, 50)
         self.button_transfer_5.clicked.connect(self.transfer_5)
+        self.button_transfer_5.setFont(QFont("Times New Roman", button_font_size))
 
         # vessel 3 l
         self.vessel3 = QLabel(self)
@@ -80,17 +90,23 @@ class MainWindow(QMainWindow):
         self.button_fill_3 = QPushButton("Fill 3L", self)
         self.button_fill_3.setGeometry(500, 470, 190, 50)
         self.button_fill_3.clicked.connect(self.fill_3)  # send signal
+        self.button_fill_3.setFont(QFont("Times New Roman", button_font_size))
+
 
         self.button_spill_3 = QPushButton("Spill 3L", self)
         self.button_spill_3.setGeometry(500, 530, 190, 50)
         self.button_spill_3.clicked.connect(self.spill_3)
+        self.button_spill_3.setFont(QFont("Times New Roman", button_font_size))
 
         self.button_transfer_3 = QPushButton("Transfer from 3L", self)
         self.button_transfer_3.setGeometry(500, 590, 190, 50)
         self.button_transfer_3.clicked.connect(self.transfer_3)
+        self.button_transfer_3.setFont(QFont("Times New Roman", button_font_size))
 
     # Button style
     ########################################################
+
+
         self.setStyleSheet('''   
                     QPushButton{
                         border: 3px solid;

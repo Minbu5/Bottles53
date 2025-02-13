@@ -39,16 +39,19 @@ class MainWindow(QMainWindow):
                                              padding-top: 0;
 
                                              }''')
-
-        self.intro_message.setGeometry(80, 0, 750, 170)
+        width = 750
+        height = 170
+        self.intro_message.setGeometry(80, 0, width, height)
         self.intro_message.setAlignment(Qt.AlignCenter)
-
         # set size of font relative to screen
         screen_height = QApplication.primaryScreen().availableGeometry().height()
-        message_font_size = int(screen_height * 0.015)  # 1,5 % of screen height, adjust as needed depending on device
+        message_font_size = int(width * 0.013 + ((screen_height - 1000) // 8))  # 1,5 % of screen height, adjust as needed depending on device
         self.intro_message.setFont(QFont("Times New Roman", message_font_size))
-
         # self.intro_message.setFont(QFont("Times New Roman", 13))
+        # print(message_font_size)
+        # print(screen_height)
+
+
 
         # Bottles
         ########################################################
@@ -60,7 +63,8 @@ class MainWindow(QMainWindow):
         self.pixmap = QPixmap(f"assets/5/5_{self.capacity5}.png")
         self.vessel5.setPixmap(self.pixmap)
         self.vessel5.setScaledContents(True)
-        button_font_size = int(screen_height * 0.013)
+        button_font_size = int(width * 0.013 + ((screen_height - 1000) // 8))
+
 
         # vessel 5 l menu buttons
         self.button_fill_5 = QPushButton("Fill 5L", self)
